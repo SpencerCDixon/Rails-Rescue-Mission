@@ -145,6 +145,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coderay
   coffee-rails (~> 4.0.0)
   dotenv-rails
   jbuilder (~> 2.0)
