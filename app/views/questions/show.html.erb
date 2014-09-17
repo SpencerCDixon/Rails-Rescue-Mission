@@ -1,0 +1,22 @@
+<h1><%= @question.title %></h1>
+<%= @question.description %>
+
+<h2> Posted by: <%= @question.user.name %> </h2>
+
+<%= link_to "Answer", new_question_answer_path(@question) %>
+
+
+<% if current_user.id == @question.user_id %>
+  <%= link_to "Edit Question", edit_question_path %>
+  <%= link_to "Delete Question", question_path %>
+<% end %>
+<%= link_to "Home", root_path %>
+
+<% if !@answers.empty? %>
+<p></p>
+<ul>
+  <% @answers.each do |answer| %>
+    <li> <strong><%= answer.user.name %> says:</strong> <%= answer.description %> </li>
+  <% end %>
+</ul>
+<% end %>

@@ -12,12 +12,13 @@
   <% if current_user %>
     Signed in as <strong><%= current_user.name %></strong>!
     <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+    <%= yield %>
   <% else %>
     <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
   <% end %>
 </ul>
 
-<%= yield %>
+
 
 </body>
 </html>
