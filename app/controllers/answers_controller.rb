@@ -17,9 +17,18 @@ class AnswersController < ApplicationController
     end
   end
 
-  # def show
-  #   @answer = Answer.find(params[:id])
-  # end
+  def update
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+    if @answer.rating.nil?
+      @answer.update_attribute(:rating, 1)
+    else
+      num = @answer.rating + 1
+      @answer.update_attribute(:rating, num)
+    end
+
+    redirect_to @question
+  end
 
   private
   def answer_params

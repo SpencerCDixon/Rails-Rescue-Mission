@@ -16,7 +16,7 @@
 <p></p>
 <ul>
   <% @answers.each do |answer| %>
-    <li> <strong><%= answer.user.name %> says:</strong> <%= answer.description %> </li>
+    <li><%= link_to "Vote Best Answer", question_answer_path(@question, answer), method: :patch %>: <%= answer.rating %> <strong><%= answer.user.name %> says:</strong> <%= markdown(answer.description) %> </li>
   <% end %>
 </ul>
 <% end %>

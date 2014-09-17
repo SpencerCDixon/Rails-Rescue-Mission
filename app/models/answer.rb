@@ -5,5 +5,5 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   belongs_to :user
 
-  default_scope { order('updated_at ASC') }
+  default_scope { order('rating DESC') }
 end
