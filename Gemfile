@@ -41,3 +41,4 @@ gem 'spring',        group: :development
 gem 'pry-rails'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
+gem 'redcarpet'
